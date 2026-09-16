@@ -1,0 +1,40 @@
+{
+  "id": "/",
+  "name": "Kal Mydas",
+  "short_name": "Kal Mydas",
+  "description": "Protocole non dépositaire sur Base. Trading algorithmique sur l’or (XAUUSD), 5 stratégies, gouvernance par le jeton KAL. Un outil d’autonomie.",
+  "lang": "fr",
+  "dir": "ltr",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#060A18",
+  "theme_color": "#c9a84c",
+  "categories": ["finance", "utilities"],
+  "icons": [
+    {
+      "src": "/brand/icone-kalmydas-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/brand/icone-kalmydas-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/brand/icone-kalmydas-maskable-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "/brand/icone-kalmydas-maskable-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ]
+}
