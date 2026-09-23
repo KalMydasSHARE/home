@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunk_N_E=self.webpackChunk_N_E||[]).push([[1601],{41601:function(e,n,s){s.r(n),s.d(n,{default:function(){return t}});var u=s(54977),r=s(92277);function t(){return(0,u.jsx)("div",{className:"km-v21-univers-plein",children:(0,u.jsx)(r.Z,{dansFenetre:!0})})}}}]);
