@@ -1,0 +1,21 @@
+{
+  "id": "/",
+  "name": "Kal Mydas",
+  "short_name": "Kal Mydas",
+  "description": "L’écosystème KAL : stratégies sur l’or et le bitcoin, portefeuille non dépositaire, liquidité et gouvernance, sur le réseau Base.",
+  "lang": "fr",
+  "dir": "ltr",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#060A18",
+  "theme_color": "#060A18",
+  "categories": ["finance", "utilities"],
+  "icons": [
+    { "src": "/brand/icone-kalmydas-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "/brand/icone-kalmydas-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "/brand/icone-kalmydas-maskable-192.png", "sizes": "192x192", "type": "image/png", "purpose": "maskable" },
+    { "src": "/brand/icone-kalmydas-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}
