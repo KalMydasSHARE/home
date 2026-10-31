@@ -46,3 +46,59 @@ self.addEventListener('fetch', (evenement) => {
     ),
   )
 })
+
+// OF 5029, 2026-10-31 : notification poussee a la parution d'une annonce.
+// Rien n'arrive ici sans un abonnement que la personne a demande elle-meme
+// (bouton de l'ecran Annonces). Le texte est celui de l'annonce, pose par le
+// serveur. Le chiffre de l'icone suit le nombre de notifications encore
+// affichees : l'agent de service n'a pas acces au stockage local de la page.
+function poserBadge() {
+  return self.registration
+    .getNotifications()
+    .then((liste) => {
+      const n = self.navigator
+      if (!n || !n.setAppBadge) return
+      return liste.length ? n.setAppBadge(liste.length) : n.clearAppBadge && n.clearAppBadge()
+    })
+    .catch(() => {})
+}
+
+self.addEventListener('push', (evenement) => {
+  let d = {}
+  try {
+    d = evenement.data ? evenement.data.json() : {}
+  } catch (e) {
+    d = {}
+  }
+  const titre = typeof d.titre === 'string' && d.titre ? d.titre : 'Kal Mydas'
+  evenement.waitUntil(
+    self.registration
+      .showNotification(titre, {
+        body: typeof d.texte === 'string' ? d.texte : '',
+        tag: typeof d.id === 'string' ? d.id : undefined,
+        icon: '/logo-k-256.png',
+        badge: '/logo-k-128.png',
+        data: { url: typeof d.url === 'string' && d.url.startsWith('/') ? d.url : '/v2.1/annonces/' },
+      })
+      .then(poserBadge),
+  )
+})
+
+self.addEventListener('notificationclick', (evenement) => {
+  evenement.notification.close()
+  const url = (evenement.notification.data && evenement.notification.data.url) || '/v2.1/annonces/'
+  evenement.waitUntil(
+    self.clients
+      .matchAll({ type: 'window', includeUncontrolled: true })
+      .then((fenetres) => {
+        for (const f of fenetres) {
+          if ('focus' in f) {
+            if ('navigate' in f) f.navigate(url).catch(() => {})
+            return f.focus()
+          }
+        }
+        return self.clients.openWindow(url)
+      })
+      .then(poserBadge),
+  )
+})
