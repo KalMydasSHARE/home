@@ -1,8 +1,8 @@
 {
   "id": "/",
-  "name": "Kal Mydas",
-  "short_name": "Kal Mydas",
-  "description": "L’écosystème KAL : stratégies sur l’or et le bitcoin, portefeuille non dépositaire, liquidité et gouvernance, sur le réseau Base.",
+  "name": "KAL ecosystem",
+  "short_name": "KAL ecosystem",
+  "description": "KAL ecosystem réunit quatre applications sur Base autour d’un seul jeton, le KAL. Robots de trading sur l’or et le bitcoin, portefeuille, messagerie et activité.",
   "lang": "fr",
   "dir": "ltr",
   "start_url": "/",
